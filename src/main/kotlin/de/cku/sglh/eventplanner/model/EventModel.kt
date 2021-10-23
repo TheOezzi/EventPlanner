@@ -11,6 +11,11 @@ internal class EventModel @Autowired constructor(
     private val eventRepository: EventRepository,
     private val transactionHandler: TransactionHandler,
 ) {
+    fun getAll(): List<EventEntity> {
+        return transactionHandler.execute {
+            eventRepository.findAll().toList()
+        }
+    }
     fun createNewEvent(
         withName: String,
         andLocation: String,
