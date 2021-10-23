@@ -2,6 +2,7 @@ package de.cku.sglh.eventplanner.persistence
 
 import de.cku.sglh.eventplanner.persistence.EventEntity.Companion.COLUMN_NAME_ID
 import de.cku.sglh.eventplanner.persistence.EventEntity.Companion.TABLE_NAME_EVENT
+import java.time.LocalDate
 import java.util.*
 import javax.persistence.*
 
@@ -35,8 +36,7 @@ open class EventEntity {
     open var location: String = ""
 
     @Column(name = COLUMN_NAME_DATE, nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    open var date: Date? = null
+    open var date: LocalDate? = null
 
     @Column(name = COLUMN_NAME_ATTENDEES, nullable = false)
     open var attendees: String = ""

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Event Planer</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../js/detail.js"></script>
+</head>
+
+<body>
+<h2>Event Details</h2>
+<div class="table-wrapper">
+    <table class="fl-table">
+        <tbody>
+            <tr>
+                <td>Name:</td>
+                <td>${event.name}</td>
+            </tr>
+            <tr>
+                <td>Ort:</td>
+                <td>${event.location}</td>
+            </tr>
+            <tr>
+                <td>Datum:</td>
+                <td>${event.date}</td>
+            </tr>
+            <tr>
+                <td>Teilnehmer:</td>
+                <td>${event.attendees}</td>
+            </tr>
+            <tr>
+                <td onclick="deleteEvent(${event.id})">
+                    <img src="../../img/delete.png" height="20px">
+                </td>
+                <td>
+                    <img src="../../img/edit.png" height="20px">
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+
+</html>

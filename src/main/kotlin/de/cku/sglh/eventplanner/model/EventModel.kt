@@ -1,6 +1,8 @@
 package de.cku.sglh.eventplanner.model
 
+import de.cku.sglh.eventplanner.comms.toDate
 import de.cku.sglh.eventplanner.persistence.*
+import java.time.LocalDate
 import java.util.*
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.repository.findByIdOrNull
@@ -11,15 +13,10 @@ internal class EventModel @Autowired constructor(
     private val eventRepository: EventRepository,
     private val transactionHandler: TransactionHandler,
 ) {
-    fun getAll(): List<EventEntity> {
-        return transactionHandler.execute {
-            eventRepository.findAll().toList()
-        }
-    }
     fun createNewEvent(
         withName: String,
         andLocation: String,
-        andDate: Date,
+        andDate: LocalDate,
         andAttendees: List<String>,
     ) {
         transactionHandler.execute {
@@ -37,7 +34,7 @@ internal class EventModel @Autowired constructor(
         withId: Long,
         newName: String? = null,
         newLocation: String? = null,
-        newDate: Date? = null,
+        newDate: String? = null,
     ) {
         transactionHandler.execute {
             eventRepository.findByIdOrNull(withId)?.let { event ->
@@ -48,7 +45,7 @@ internal class EventModel @Autowired constructor(
                     event.location = newLocation
                 }
                 newDate?.let {
-                    event.date = newDate
+                    event.date = newDate.toDate()
                 }
                 eventRepository.save(event)
             }
@@ -81,5 +78,15 @@ internal class EventModel @Autowired constructor(
                 eventRepository.save(event)
             }
         }
+    }
+
+    fun getAll(): List<EventEntity> {
+        return transactionHandler.execute {
+            eventRepository.findAll().toList()
+        }
+    }
+
+    fun getById(eventId: Long) = transactionHandler.execute {
+        eventRepository.findById(eventId).get()
     }
 }
