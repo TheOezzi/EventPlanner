@@ -17,14 +17,21 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springframework.boot:spring-boot-starter-freemarker")
-	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
-	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	runtimeOnly("com.h2database:h2")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	// spring stuff
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa:2.5.5")
+	implementation("org.springframework.boot:spring-boot-starter-freemarker:2.5.5")
+	implementation("org.springframework.boot:spring-boot-starter-web:2.5.5")
+	//serialization
+	implementation("com.fasterxml.jackson.module:jackson-module-kotlin:2.13.0")
+	//kt
+	implementation("org.jetbrains.kotlin:kotlin-reflect:1.5.21")
+	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.5.21")
+	//logging
+	implementation("io.github.microutils:kotlin-logging-jvm:2.0.11")
+	//database driver
+	runtimeOnly("com.h2database:h2:1.4.200")
+	//tests
+	testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.5")
 }
 
 tasks.withType<KotlinCompile> {
