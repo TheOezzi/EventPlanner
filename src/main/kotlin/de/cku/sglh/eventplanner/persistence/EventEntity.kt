@@ -1,9 +1,10 @@
 package de.cku.sglh.eventplanner.persistence
 
+import de.cku.sglh.eventplanner.exception.EventPlannerException
 import de.cku.sglh.eventplanner.persistence.EventEntity.Companion.COLUMN_NAME_ID
 import de.cku.sglh.eventplanner.persistence.EventEntity.Companion.TABLE_NAME_EVENT
-import java.time.LocalDate
-import java.util.*
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import javax.persistence.*
 
 @Entity
@@ -36,8 +37,32 @@ open class EventEntity {
     open var location: String = ""
 
     @Column(name = COLUMN_NAME_DATE, nullable = false)
-    open var date: LocalDate? = null
+    open var date: LocalDateTime? = null
 
     @Column(name = COLUMN_NAME_ATTENDEES, nullable = false)
     open var attendees: String = ""
+}
+
+fun String.toDate(): LocalDateTime {
+    val formatters  = listOf(
+        DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm"),
+        DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS")
+    )
+
+    for (formatter in formatters) {
+        try {
+            return LocalDateTime.parse(this, formatter)
+        } catch (e: Exception) {}
+    }
+    throw EventPlannerException("", "")
+}
+
+fun LocalDateTime.toDateStringForPicker(): String {
+    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm")
+    return this.format(formatter)
+}
+
+fun LocalDateTime.toDateStringForList(): String {
+    val formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm")
+    return this.format(formatter)
 }

@@ -1,11 +1,10 @@
 package de.cku.sglh.eventplanner.controller
 
 import de.cku.sglh.eventplanner.comms.CreateEventDto
-import de.cku.sglh.eventplanner.comms.toDate
 import de.cku.sglh.eventplanner.model.EventModel
-import de.cku.sglh.eventplanner.view.EventsViewModel
-import java.awt.PageAttributes
-import java.time.LocalDate
+import de.cku.sglh.eventplanner.persistence.toDate
+import de.cku.sglh.eventplanner.view.DetailViewModel
+import de.cku.sglh.eventplanner.view.ListViewModel
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.MediaType
 import org.springframework.stereotype.Controller
@@ -21,7 +20,7 @@ internal class EventController @Autowired constructor(
     fun list(): ModelAndView {
        return ModelAndView(
            "list",
-           mapOf("model" to EventsViewModel(eventModel.getAll()))
+           mapOf("model" to ListViewModel.from(eventModel.getAll()))
        )
     }
 
@@ -30,7 +29,7 @@ internal class EventController @Autowired constructor(
         val event = eventModel.getById(eventId)
         return ModelAndView(
             "detail",
-            mapOf("event" to event)
+            mapOf("model" to DetailViewModel.from(event))
         )
     }
 
@@ -40,7 +39,7 @@ internal class EventController @Autowired constructor(
             withName = eventDto.name,
             andDate = eventDto.date.toDate(),
             andLocation = eventDto.location,
-            andAttendees = eventDto.attendees.split(", ")
+            andAttendees = eventDto.attendees
         )
     }
 

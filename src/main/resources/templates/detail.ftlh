@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Event Planer</title>
+    <title>Konzert Planer</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,26 +15,26 @@
         <tbody>
             <tr>
                 <td>Name:</td>
-                <td>${event.name}</td>
+                <td><input type="text" value=${model.name}></td>
             </tr>
             <tr>
                 <td>Ort:</td>
-                <td>${event.location}</td>
+                <td><input type="text" value=${model.location}></td>
             </tr>
             <tr>
                 <td>Datum:</td>
-                <td>${event.date}</td>
+                <td><input type="datetime-local" value=${model.date}></td>
             </tr>
             <tr>
                 <td>Teilnehmer:</td>
-                <td>${event.attendees}</td>
+                <td><input type="text" value=${model.attendees}></td>
             </tr>
             <tr>
-                <td onclick="deleteEvent(${event.id})">
+                <td onclick="deleteEvent(${model.id})">
                     <img src="../../img/delete.png" height="20px">
                 </td>
                 <td>
-                    <img src="../../img/edit.png" height="20px">
+                    <img src="../../img/save.png" height="20px">
                 </td>
             </tr>
         </tbody>

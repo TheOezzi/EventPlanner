@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Event Planer</title>
+    <title>Konzert Planer</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<h2>SGLH Event Planer</h2>
+<h2>SGLH Konzert Planer</h2>
 <div class="table-wrapper">
     <table class="fl-table">
         <thead>
