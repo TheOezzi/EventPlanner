@@ -7,5 +7,4 @@ import org.springframework.transaction.annotation.Transactional
 
 @Repository
 @Transactional(propagation = Propagation.REQUIRED)
-internal interface EventRepository: CrudRepository<EventEntity, Long> {
-}
+internal interface EventRepository : CrudRepository<EventEntity, Long>

@@ -21,17 +21,17 @@
         </tr>
         </thead>
         <tbody>
-            <tr onclick="createNewEvent()">
-                <td colspan="4">Neues Event erstellen</td>
+        <tr onclick="createNewEvent()">
+            <td colspan="4">Neues Event erstellen</td>
+        </tr>
+        <#list model.events as event>
+            <tr onclick="showDetails(${event.id})">
+                <td>${event.name}</td>
+                <td>${event.location}</td>
+                <td>${event.date}</td>
+                <td>${event.attendees}</td>
             </tr>
-            <#list model.events as event>
-                <tr onclick="showDetails(${event.id})">
-                    <td>${event.name}</td>
-                    <td>${event.location}</td>
-                    <td>${event.date}</td>
-                    <td>${event.attendees}</td>
-                </tr>
-            </#list>
+        </#list>
         </tbody>
     </table>
 </div>

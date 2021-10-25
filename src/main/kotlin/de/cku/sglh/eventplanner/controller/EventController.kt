@@ -14,14 +14,14 @@ import org.springframework.web.servlet.ModelAndView
 @Controller
 @RequestMapping("events")
 internal class EventController @Autowired constructor(
-    private val eventModel: EventModel
+    private val eventModel: EventModel,
 ) {
     @GetMapping("list")
     fun list(): ModelAndView {
-       return ModelAndView(
-           "list",
-           mapOf("model" to ListViewModel.from(eventModel.getAll()))
-       )
+        return ModelAndView(
+            "list",
+            mapOf("model" to ListViewModel.from(eventModel.getAll()))
+        )
     }
 
     @GetMapping("detail/{eventId}")
@@ -49,7 +49,7 @@ internal class EventController @Autowired constructor(
     }
 
     @GetMapping("create")
-    fun createPage() : ModelAndView {
+    fun createPage(): ModelAndView {
         return ModelAndView("create")
     }
 }

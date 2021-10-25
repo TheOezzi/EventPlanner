@@ -44,7 +44,7 @@ open class EventEntity {
 }
 
 fun String.toDate(): LocalDateTime {
-    val formatters  = listOf(
+    val formatters = listOf(
         DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm"),
         DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss.SSS")
     )
@@ -52,7 +52,8 @@ fun String.toDate(): LocalDateTime {
     for (formatter in formatters) {
         try {
             return LocalDateTime.parse(this, formatter)
-        } catch (e: Exception) {}
+        } catch (e: Exception) {
+        }
     }
     throw EventPlannerException("", "")
 }

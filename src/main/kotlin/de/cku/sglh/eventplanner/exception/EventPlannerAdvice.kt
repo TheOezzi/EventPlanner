@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler
 import org.springframework.web.bind.annotation.RestControllerAdvice
 
 private val Log = KotlinLogging.logger { }
+
 @RestControllerAdvice
 internal class EventPlannerAdvice {
     @ExceptionHandler(EventPlannerException::class)

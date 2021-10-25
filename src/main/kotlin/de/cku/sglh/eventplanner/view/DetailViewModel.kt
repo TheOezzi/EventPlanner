@@ -4,11 +4,11 @@ import de.cku.sglh.eventplanner.persistence.EventEntity
 import de.cku.sglh.eventplanner.persistence.toDateStringForPicker
 
 class DetailViewModel private constructor(
-   val name: String,
-   val location: String,
-   val date: String,
-   val attendees: String,
-   val id: Long
+    val name: String,
+    val location: String,
+    val date: String,
+    val attendees: String,
+    val id: Long,
 ) {
     companion object {
         fun from(entity: EventEntity): DetailViewModel {

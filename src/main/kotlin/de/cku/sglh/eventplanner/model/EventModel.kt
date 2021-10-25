@@ -33,7 +33,7 @@ internal class EventModel @Autowired constructor(
         newName: String,
         newLocation: String,
         newDate: String,
-        newAttendees: String
+        newAttendees: String,
     ) {
         transactionHandler.execute {
             eventRepository.findByIdOrNull(withId)?.let { event ->

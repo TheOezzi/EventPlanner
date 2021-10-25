@@ -4,5 +4,5 @@ data class CreateEventDto(
     val name: String,
     val location: String,
     val date: String,
-    val attendees: String
+    val attendees: String,
 )
