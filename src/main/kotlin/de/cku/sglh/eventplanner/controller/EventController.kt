@@ -1,6 +1,6 @@
 package de.cku.sglh.eventplanner.controller
 
-import de.cku.sglh.eventplanner.comms.CreateEventDto
+import de.cku.sglh.eventplanner.comms.EventDto
 import de.cku.sglh.eventplanner.model.EventModel
 import de.cku.sglh.eventplanner.persistence.toDate
 import de.cku.sglh.eventplanner.view.DetailViewModel
@@ -33,8 +33,22 @@ internal class EventController @Autowired constructor(
         )
     }
 
+    @PostMapping("edit/{eventId}", consumes = [MediaType.APPLICATION_JSON_VALUE])
+    fun edit(
+        @PathVariable eventId: Long,
+        @RequestBody eventDto: EventDto
+    ) {
+        eventModel.editEvent(
+            withId = eventId,
+            newName= eventDto.name,
+            newLocation= eventDto.location,
+            newDate= eventDto.date,
+            newAttendees= eventDto.attendees,
+        )
+    }
+
     @PostMapping(consumes = [MediaType.APPLICATION_JSON_VALUE])
-    fun create(@RequestBody eventDto: CreateEventDto) {
+    fun create(@RequestBody eventDto: EventDto) {
         eventModel.createNewEvent(
             withName = eventDto.name,
             andDate = eventDto.date.toDate(),

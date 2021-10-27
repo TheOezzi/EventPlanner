@@ -1,8 +1,8 @@
 function createNew() {
-    let name = document.getElementById("name").value
-    let location = document.getElementById("location").value
-    let date = document.getElementById("date").value
-    let attendees = document.getElementById("attendees").value
+    let name = document.getElementById("create-name").value
+    let location = document.getElementById("create-location").value
+    let date = document.getElementById("create-date").value
+    let attendees = document.getElementById("create-attendees").value
 
     let entity = {
         "name": name,

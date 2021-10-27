@@ -10,9 +10,16 @@ body {
     background: rgba(71, 147, 227, 1);
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 150px;
+}
+
 h2 {
     text-align: center;
-    font-size: 18px;
+    font-size: 24px;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: white;

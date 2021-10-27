@@ -9,25 +9,28 @@
 </head>
 
 <body>
-<h2>Konzert Details</h2>
+<div >
+    <img src="../../img/sglh.png" class="center">
+    <h2>Neues Konzert erstellen</h2>
+</div>
 <div class="table-wrapper">
     <table class="fl-table">
         <tbody>
         <tr>
             <td>Name:</td>
-            <td><input type="text" id="name"/></td>
+            <td><input type="text" id="create-name"/></td>
         </tr>
         <tr>
             <td>Ort:</td>
-            <td><input type="text" id="location"/></td>
+            <td><input type="text" id="create-location"/></td>
         </tr>
         <tr>
             <td>Datum:</td>
-            <td><input type="datetime-local" id="date"/></td>
+            <td><input type="datetime-local" id="create-date"/></td>
         </tr>
         <tr>
             <td>Teilnehmer:</td>
-            <td><input type="text" id="attendees"/></td>
+            <td><input type="text" id="create-attendees"/></td>
         </tr>
         <tr onclick="createNew()">
             <td colspan="2"><img src="../../img/save.png" height="20px"></td>

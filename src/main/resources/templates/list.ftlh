@@ -9,7 +9,10 @@
 </head>
 
 <body>
-<h2>SGLH Konzert Planer</h2>
+<div >
+    <img src="./../img/sglh.png" class="center">
+    <h2>SGLH Konzert Planer</h2>
+</div>
 <div class="table-wrapper">
     <table class="fl-table">
         <thead>
