@@ -4,12 +4,14 @@
     <title>Konzert Planer</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../css/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../../js/detail.js"></script>
 </head>
 
 <body>
-<div >
+<div class>
     <img src="../../img/sglh.png" class="center">
     <h2>Konzert Details</h2>
 </div>
@@ -33,11 +35,11 @@
             <td><input type="text" id="edit-attendees" value="${model.attendees}"></td>
         </tr>
         <tr>
-            <td onclick="deleteEvent(${model.id})">
-                <img src="../../img/delete.png" height="20px">
+            <td>
+                <button class="btn btn-2 btn-sep icon-delete" onclick="deleteEvent(${model.id})">Löschen</button>
             </td>
-            <td onclick="editEvent(${model.id})">
-                <img src="../../img/save.png" height="20px">
+            <td>
+                <button class="btn btn-1 btn-sep icon-save" onclick="editEvent(${model.id})">Speichern</button>
             </td>
         </tr>
         </tbody>

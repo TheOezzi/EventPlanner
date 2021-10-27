@@ -4,6 +4,8 @@
     <title>Konzert Planer</title>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../../css/style.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="../../js/create.js"></script>
 </head>
@@ -32,8 +34,8 @@
             <td>Teilnehmer:</td>
             <td><input type="text" id="create-attendees"/></td>
         </tr>
-        <tr onclick="createNew()">
-            <td colspan="2"><img src="../../img/save.png" height="20px"></td>
+        <tr>
+            <td colspan="2"><button class="btn btn-1 btn-sep icon-save" onclick="createNew()">Speichern</button></td>
         </tr>
         </tbody>
     </table>

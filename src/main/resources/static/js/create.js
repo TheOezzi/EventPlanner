@@ -25,5 +25,5 @@ window.addEventListener('load', () => {
     now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
     now.setMilliseconds(null)
     now.setSeconds(null)
-    document.getElementById('date').value = now.toISOString().slice(0, -1);
+    document.getElementById('create-date').value = now.toISOString().slice(0, -1);
 });

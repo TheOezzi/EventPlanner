@@ -69,3 +69,140 @@ h2 {
 .fl-table tr:nth-child(even) {
     background: #F8F8F8;
 }
+
+.btn {
+    border: none;
+    font-family: 'Lato';
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    cursor: pointer;
+    padding: 25px 80px;
+    margin:0 auto;
+    display:block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 700;
+    outline: none;
+    position: relative;
+    height: 50px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.btn:after {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+/* Pseudo elements for icons */
+.btn:before {
+    font-family: 'FontAwesome';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    position: center;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Icon separator */
+.btn-sep {
+    padding: 5px 60px 5px 120px;
+}
+
+.btn-sep:before {
+    background: rgba(0,0,0,0.15);
+}
+
+/* Button 1 */
+.btn-1 {
+    background: #3498db;
+    color: #fff;
+}
+
+.btn-1:hover {
+    background: #2980b9;
+}
+
+.btn-1:active {
+    background: #2980b9;
+    top: 2px;
+}
+
+.btn-1:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+}
+
+.btn-2 {
+    background: #e74c3c;
+    color: #fff;
+}
+
+.btn-2:hover {
+    background: #c0392b;
+}
+
+.btn-2:active {
+    background: #c0392b;
+    top: 2px;
+}
+
+.btn-2:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+}
+
+.btn-3 {
+    background: #2ecc71;
+    color: #fff;
+}
+
+.btn-3:hover {
+    background: #27ae60;
+}
+
+.btn-3:active {
+    background: #27ae60;
+    top: 2px;
+}
+
+.btn-3:before {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    line-height: 3;
+    font-size: 140%;
+    width: 60px;
+}
+
+.icon-delete:before {
+    content: "\f014";
+}
+
+.icon-save:before {
+    content: "\f0c7";
+}
+
+.icon-add:before {
+    content: "\f055";
+}
