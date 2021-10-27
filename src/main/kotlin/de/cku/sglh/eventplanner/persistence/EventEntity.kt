@@ -26,7 +26,7 @@ open class EventEntity {
     }
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = COLUMN_NAME_ID, nullable = false)
     open var id: Long = 0
 

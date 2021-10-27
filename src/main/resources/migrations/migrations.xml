@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="CKu (manual)" id="202110271000">
+        <preConditions onFail="MARK_RAN">
+            <or>
+                <dbms type="mssql"/>
+                <dbms type="h2"/>
+            </or>
+        </preConditions>
+        <createSequence sequenceName="hibernate_sequence" startValue="1"/>
+    </changeSet>
+    <changeSet author="CKu (manual)" id="202110271015">
+        <createTable tableName="events">
+            <column name="ID" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="CONSTRAINT_6"/>
+            </column>
+            <column name="NAME" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LOCATION" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ATTENDEES" type="varchar(250)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DATE" type="TIMESTAMP"/>
+        </createTable>
+
+    </changeSet>
+</databaseChangeLog>
