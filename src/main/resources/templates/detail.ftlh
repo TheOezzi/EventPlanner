@@ -11,7 +11,7 @@
 </head>
 
 <body>
-<div class>
+<div>
     <img src="../../img/sglh.png" class="center">
     <h2>Konzert Details</h2>
 </div>
