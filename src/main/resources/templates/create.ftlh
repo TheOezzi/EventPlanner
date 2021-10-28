@@ -3,6 +3,7 @@
 <head>
     <title>Konzert Planer</title>
     <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="../../img/sglh.png">
     <link rel="stylesheet" href="../../css/style.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>

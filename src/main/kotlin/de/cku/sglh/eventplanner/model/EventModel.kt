@@ -53,9 +53,9 @@ internal class EventModel @Autowired constructor(
         }
     }
 
-    fun getAll(): List<EventEntity> {
-        return transactionHandler.execute {
-            eventRepository.findAll().toList()
+    fun getAll(): List<EventEntity> = transactionHandler.execute {
+        eventRepository.findAllByOrderByDateAsc().toList().filter {
+            it.date!!.isAfter(LocalDateTime.now())
         }
     }
 

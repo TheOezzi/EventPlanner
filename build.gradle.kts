@@ -10,7 +10,7 @@ plugins {
 }
 
 group = "de.cku.sglh"
-version = "0.0.1"
+version = "0.0.3"
 java.sourceCompatibility = JavaVersion.VERSION_16
 
 fun imageTag(name: String, version: Any = "latest"): String {

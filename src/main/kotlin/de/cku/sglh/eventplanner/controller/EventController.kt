@@ -36,14 +36,14 @@ internal class EventController @Autowired constructor(
     @PostMapping("edit/{eventId}", consumes = [MediaType.APPLICATION_JSON_VALUE])
     fun edit(
         @PathVariable eventId: Long,
-        @RequestBody eventDto: EventDto
+        @RequestBody eventDto: EventDto,
     ) {
         eventModel.editEvent(
             withId = eventId,
-            newName= eventDto.name,
-            newLocation= eventDto.location,
-            newDate= eventDto.date,
-            newAttendees= eventDto.attendees,
+            newName = eventDto.name,
+            newLocation = eventDto.location,
+            newDate = eventDto.date,
+            newAttendees = eventDto.attendees,
         )
     }
 
